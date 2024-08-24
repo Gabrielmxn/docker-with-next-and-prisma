@@ -10,6 +10,7 @@ fi
 npx prisma generate && npx prisma migrate deploy
 npx prisma db seed
 npm run build
-npm install --production && npm cache clean --force
+
+
 # Run the main container command.
 exec "$@"

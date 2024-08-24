@@ -7,7 +7,18 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+  
     extend: {
+      keyframes: {
+        docker: {
+            'to': {
+              transform:  'rotate(360deg)',
+            }
+        }
+      },
+      animation: {
+        'refresh': 'docker 3s linear infinite',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

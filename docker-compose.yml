@@ -10,11 +10,11 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=dockers
-      - POSTGRES_PASSWORD=dockers
-      - POSTGRES_DB=nextjsdocker
+      - POSTGRES_USER= ${POSTGRES_USER}
+      - POSTGRES_PASSWORD= ${POSTGRES_PASSWORD}
+      - POSTGRES_DB= ${POSTGRES_DB}
     networks:
-      - primeira-s
+      - docker-devOps
   nextjs-docker:
     restart: always
     container_name: nextjs-docker
@@ -30,10 +30,10 @@ services:
     depends_on:
       - postgres
     networks:
-      - primeira-s
+      - docker-devOps
 
 networks:
-  primeira-s:
+  docker-devOps:
     driver: bridge
 
 volumes:

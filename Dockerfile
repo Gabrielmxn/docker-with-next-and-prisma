@@ -7,7 +7,7 @@ WORKDIR /usr/src/nextjs
 
 COPY package.json package-lock.json next.config.mjs ./
 
-RUN npm install
+RUN npm install --production && npm cache clean --force
 
 RUN apk update && apk add bash
 # Copiar scripts de espera e entrypoint
